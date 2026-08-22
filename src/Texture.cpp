@@ -90,4 +90,13 @@ class Texture
         glGenerateMipmap(texture);
         stbi_image_free(data);
     }
+
+    void processTextures(const std::string &name, bool value) const
+    {
+        glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
+    }
+
+    
+
+    
 }

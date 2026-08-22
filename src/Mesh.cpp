@@ -6,12 +6,34 @@ class Mesh
 public:
     Texture texture;
     int[] vertexData;
-    Mesh()
+    TextureType type;
+
+struct meshdata {
+    string instanceName;
+    char* texturePath;
+    bool eboEnabled;
+    TextureType type;
+    TextureWrap wrap;
+    TextureFiltering filter;
+    TextureMipMapMethod method;
+    TextureMipMapMode mode;
+}
+
+    Mesh(meshdata data)
+    {
+        texture(data.texturePath, data.type);
+        processVertexData();
+        readVertexAttrib();
+        configureTextureAttrib();  
+    }
+
+    void processVertexData()
     {
 
     }
 
-    void initTextureAttrib() const
+    void readVertexAttrib() const
+    void configureTextureAttrib() const
     {
         // Positional attribute
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);

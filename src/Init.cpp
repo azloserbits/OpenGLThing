@@ -1,10 +1,10 @@
-#ifndef Init_H
-#define Init_H
-
+#include "vector"
+#include "string"
 
 class Init
 {
 public:
+    IO io;
     Init(){}
 
     void initGLFW() const
@@ -25,9 +25,25 @@ public:
 
     Mesh* initMeshes()
     {
-        
+        vector<string> dataFilePaths = io.listDirectoryContents("assets/data");
+        vector<string> imgFilePaths = (assets/img);
+        vector<Mesh> Meshes;
+
+        for(auto &entry : io.listDirectoryContents())
+        {
+            Mesh m(io.);
+            Meshes.pushBack;
+        }
     }
 
     void
 };
 #endif
+
+
+struct mesh {
+    2d = GL_IMAGE_2D;
+}
+mesh mesh;
+string = "2d";
+mesh.type = str;

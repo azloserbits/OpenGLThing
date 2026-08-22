@@ -1,0 +1,39 @@
+-data struct
+instanceName: amongus
+textures: assets/images/amongus
+eboEnabled: true
+texture_type: GL_TEXTURE_2D
+texture_wrap_s: GL_MIRRORED_REPEAT
+texture_wrap_t: GL_MIRRORED_REPEAT
+borderColor = {R, G, B, A} //check if null if so skip line 6 |if not null do this glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+gl_min_filter: GL_NEAREST
+gl_mag_filter: GL_NEAREST
+mipmap_mode: GL_NEAREST/GL_LINEAR
+mipmap_method: //one of the four
+-end
+
+-data vertexAttrib
+float vertices (pos3) 
+(color3) (tex2) (totalverts4)
+0.5f,  0.5f, 0.0f,   0.35f, 0.807f, 0.98f,   1.0f, 1.0f,
+0.5f, -0.5f, 0.0f,   0.960f, 0.662f, 0.721f,   1.0f, 0.0f,
+-0.5f, -0.5f, 0.0f,   0.35f, 0.807f, 0.98f,   0.0f, 0.0f,
+-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 1.0f,   0.0f, 1.0f
+-end
+
+-data indices
+unsigned int indices
+(uint 3)(uint2) 
+0, 1, 3
+1, 2, 3
+-end
+
+
+-data vertexCoords
+(float2)(sides3) //make it fit like the actual sides though
+float texCoords
+0.0f, 0.0f,
+1.0f, 0.0f, 
+0.5f, 1.0f
+-end
+#

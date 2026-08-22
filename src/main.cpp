@@ -5,11 +5,11 @@
 #include <math.h>
 #include <iostream>
 //my headers start
-#include "header/Shader.h"
-#include "header/Window.h"
-#include "header/Init.h"
-#include "header/Texture.h"
-#include "header/Mesh.h"
+#include <Rendery/Shader.h>
+#include <Rendery/Window.h>
+#include <Rendery/Init.h>
+#include <Rendery/Texture.h>
+#include <Rendery/Mesh.h>
 //my headers end
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -23,6 +23,8 @@ int main()
     GLFWwindow* window = programWindow.getWindow();
     initialize.initGLAD();
     Shader programShader("glsl/shader.vs", "glsl/shader.fs");
+
+    Mesh plane;
     
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -33,7 +35,7 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    initialize.initTextureAttrib();
+    plane.initTextureAttrib();
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
